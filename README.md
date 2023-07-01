@@ -7,7 +7,7 @@ An android app where you set habits you want to perform regularly. You will be n
 You create a habit by pressing the "Add habit" button on the main screen. Here you fill out the necessary information. The data is stored locally, in a database. Every day, the app checks the habits that should be performed that day. This is shown by pressing the "See today's tasks button". To delete a habit, press "Manage habits", and then press x on the habits you want to delete.
 
 ## Privacy Policy
-This Privacy Policy governs the manner in which the Habit Hero app collects, uses, and maintains information collected from users of the Habit App. All data is stored locally. The Habit Hero app does not collect any personal information or data its users. 
+This Privacy Policy governs the manner in which the Habit Hero app collects, uses, and maintains information collected from users of the Habit Hero app. All data is stored locally. The Habit Hero app does not collect any personal information or data its users. 
 
 ### Information Collection, Data Usage and Purpose
 The data that is collected is used for the application's logic, and is needed to run as intended. This includes adding habits and displaying them at the correct time. This information is not gathered, and no data is transmitted by the app.
@@ -22,10 +22,10 @@ As no user data is collected, there are no specific user rights regarding person
 The Habit Hero app is not intended for use by children under the age of 13. We do not collect personal information from children under 13. 
 
 ### Changes to the Privacy Policy
-The Habit App's Privacy Policy may be updated from time to time. Any changes to the policy will be reflected within the app and users will be notified accordingly.
+The Habit Hero app's Privacy Policy may be updated from time to time. Any changes to the policy will be reflected within the app and users will be notified accordingly.
 
 ### Contact Information
-If you have any questions or concerns about this Privacy Policy or the Habit App, please contact us at hanlun0804@outlook.com.
+If you have any questions or concerns about this Privacy Policy or the Habit Hero app, please contact us at hanlun0804@outlook.com.
 
 ## Technologies used and developer's experience
 This app is coded in Kotlin. It is the first Android app the developer has made, and gave a good introduction to Kotlin, designing an app and working with databases. The code is commented to explain what the developer used the different code for.
