@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.HabitHero" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+
+    <style name="MyCheckBox" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorControlNormal">@color/placeholderColor</item>
+        <item name="colorControlActivated">@color/primaryColor</item>
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColorHint">@color/placeholderColor</item>
+        <item name="android:backgroundTint">@color/placeholderColor</item>
+    </style>
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:textAppearance">@style/SpinnerTextAppearance</item>
+    </style>
+
+    <style name="SpinnerTextAppearance" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
+
+    <style name="Theme.HabitHero" parent="Base.Theme.HabitHero" />
+</resources>
