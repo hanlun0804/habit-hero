@@ -1,0 +1,6 @@
+habit.habithero.test.app-core-1.5.0-0 /home/hannalunne/.gradle/caches/transforms-3/b32c7386a2aef6715cb5bd71e2ff357e/transformed/core-1.5.0/res
+habit.habithero.test.app-annotation-experimental-1.3.0-1 /home/hannalunne/.gradle/caches/transforms-3/c5ec658faf2b98f812e539eacbdac157/transformed/annotation-experimental-1.3.0/res
+habit.habithero.test.app-androidTest-2 /home/hannalunne/AndroidStudioProjects/HabitHero/app/build/generated/res/resValues/androidTest/debug
+habit.habithero.test.app-mergeDebugAndroidTestResources-3 /home/hannalunne/AndroidStudioProjects/HabitHero/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+habit.habithero.test.app-mergeDebugAndroidTestResources-4 /home/hannalunne/AndroidStudioProjects/HabitHero/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+habit.habithero.test.app-merged_res-5 /home/hannalunne/AndroidStudioProjects/HabitHero/app/build/intermediates/merged_res/debugAndroidTest

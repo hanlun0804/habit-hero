@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_add_habit.xml",
+        "source": "habit.habithero.app-main-37:/layout/activity_add_habit.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/habit_item.xml",
+        "source": "habit.habithero.app-main-37:/layout/habit_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_manage_habits.xml",
+        "source": "habit.habithero.app-main-37:/layout/activity_manage_habits.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_see_tasks.xml",
+        "source": "habit.habithero.app-main-37:/layout/activity_see_tasks.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/custom_spinner_item.xml",
+        "source": "habit.habithero.app-main-37:/layout/custom_spinner_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/manage_item.xml",
+        "source": "habit.habithero.app-main-37:/layout/manage_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "habit.habithero.app-main-37:/layout/activity_main.xml"
+    }
+]

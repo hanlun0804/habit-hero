@@ -1,0 +1,130 @@
+[
+    {
+        "merged": "habit.habithero.app-merged_res-35:/xml_data_extraction_rules.xml.flat",
+        "source": "habit.habithero.app-main-37:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/xml_backup_rules.xml.flat",
+        "source": "habit.habithero.app-main-37:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_custom_spinner_item.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/custom_spinner_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "habit.habithero.app-main-37:/drawable-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_character.png.flat",
+        "source": "habit.habithero.app-main-37:/drawable/character.png"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_activity_manage_habits.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/activity_manage_habits.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_habit_item.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/habit_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_activity_see_tasks.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/activity_see_tasks.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_manage_item.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/manage_item.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_activity_add_habit.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/activity_add_habit.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/font_font.xml.flat",
+        "source": "habit.habithero.app-main-37:/font/font.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/layout_activity_main.xml.flat",
+        "source": "habit.habithero.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "habit.habithero.app-main-37:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_smiling_character.png.flat",
+        "source": "habit.habithero.app-main-37:/drawable/smiling_character.png"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_outline_clear_24.xml.flat",
+        "source": "habit.habithero.app-main-37:/drawable/outline_clear_24.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_baseline_arrow_back_24.xml.flat",
+        "source": "habit.habithero.app-main-37:/drawable/baseline_arrow_back_24.xml"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/font_bebas_neue_regular.ttf.flat",
+        "source": "habit.habithero.app-main-37:/font/bebas_neue_regular.ttf"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_sad_character.png.flat",
+        "source": "habit.habithero.app-main-37:/drawable/sad_character.png"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_habit_icon.png.flat",
+        "source": "habit.habithero.app-main-37:/drawable/habit_icon.png"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "habit.habithero.app-main-37:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "habit.habithero.app-merged_res-35:/drawable_baseline_add_24.xml.flat",
+        "source": "habit.habithero.app-main-37:/drawable/baseline_add_24.xml"
+    }
+]

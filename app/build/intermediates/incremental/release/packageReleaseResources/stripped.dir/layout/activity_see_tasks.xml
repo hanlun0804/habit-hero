@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/backgroundColor"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvHabitTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HABIT HERO"
+        android:textColor="@color/primaryColor"
+        android:textSize="72sp"
+        android:fontFamily="@font/bebas_neue_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/todaysTasksExpl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press the checkboxes to check and uncheck tasks"
+        android:textSize="16sp"
+        android:textColor="@color/primaryColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHabitTitle"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBack"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:fabCustomSize="80dp"
+        android:backgroundTint="@color/buttonColor"
+        android:clickable="true"
+        app:tint="@color/primaryColor"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24"
+        app:elevation="0dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHabitItems"
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:background="@color/backgroundColor"
+        android:scrollbars="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaysTasksExpl"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/habit_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
