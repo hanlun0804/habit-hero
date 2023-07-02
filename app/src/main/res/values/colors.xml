@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="backgroundColor">#FFFFF5C3</color>   <!-- Background color -->
+    <color name="primaryColor">#FF313D4E</color>      <!-- Primary/text color -->
+    <color name="placeholderColor">#4F5B6C</color>    <!-- Primary/text color -->
+    <color name="accentColor">#FF76C3D0</color>       <!-- Accent color -->
+    <color name="secondaryColor">#FFC7D3DD</color>    <!-- Secondary color -->
+    <color name="highlightColor">#FFFFAC00</color>    <!-- Highlight color -->
+    <color name="buttonColor">#FF4DB5AB</color>       <!-- Button color -->
+</resources>
