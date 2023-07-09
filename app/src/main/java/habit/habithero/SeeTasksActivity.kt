@@ -1,6 +1,10 @@
 package habit.habithero
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.LinearLayout
@@ -12,6 +16,8 @@ import habit.habithero.Adapter.TaskAdapter
 import habit.habithero.Database.HabitDatabase
 import habit.habithero.Models.Habit
 import habit.habithero.Models.HabitViewModel
+import habit.habithero.Utilities.NotificationReceiver
+import habit.habithero.Utilities.ResetCheckedStatusReceiver
 import habit.habithero.databinding.ActivitySeeTasksBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,6 +32,12 @@ class SeeTasksActivity : AppCompatActivity() {
     private lateinit var database: HabitDatabase
     lateinit var viewModel: HabitViewModel
     lateinit var adapter: TaskAdapter
+    companion object {
+        var tmpDate = 5
+        fun setTempDate(newDate: Int) {
+            tmpDate = newDate
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +50,7 @@ class SeeTasksActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this,
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(HabitViewModel::class.java)
 
+
         // Initiates UI
         initUI()
 
@@ -49,6 +62,13 @@ class SeeTasksActivity : AppCompatActivity() {
             displayData(readData())
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Updates isChecked
+        resetIsChecked()
     }
 
     private fun initUI() {
@@ -75,9 +95,22 @@ class SeeTasksActivity : AppCompatActivity() {
         withContext(Dispatchers.IO) {
             habits = database.getHabitDao().getToday()
         }
-        Log.d("MYAPP", habits.toString())
         return habits
     }
+
+    private fun resetIsChecked() {
+        // Reset isChecked to 0 at midnight
+        if (6 != tmpDate) {
+            Log.d("MYAPP", "Date: ${6.toString()}")
+            Log.d("MYAPP", "Temp: ${tmpDate.toString()}")
+            setTempDate(6)
+            viewModel.resetHabitCheckedStatus()
+            Log.d("MYAPP", "Temp: ${tmpDate.toString()}")
+            database
+        }
+    }
+
+
 
     // Updates which habits should be added on the current date
     private fun updateTodayStatus() {
@@ -92,17 +125,19 @@ class SeeTasksActivity : AppCompatActivity() {
         val date = calendar.get(Calendar.DAY_OF_MONTH)
         val day = calendar.get(Calendar.DAY_OF_WEEK)
 
-        // Starts a corountine
+        // Starts a coroutine
         lifecycleScope.launch {
             lateinit var habits: List<Habit>
             // Data from database is retrieved on background thread
             withContext(Dispatchers.IO) {
                 habits = database.getHabitDao().getToday()
             }
+
             if (!habits.isNullOrEmpty()) {
                 for (habit in habits) {
+
                     var tempDate: Int = date
-                    // Checks if it should be repeated on a spesific date (0 by default)
+                    // Checks if it should be repeated on a specific date (0 by default)
                     if (habit.repeatOnDate == 0) {
                         habit.isToday = habit.repeatOnDay.contains(day)
                     } else {
@@ -120,7 +155,6 @@ class SeeTasksActivity : AppCompatActivity() {
                     }
                     // Updates habit
                     viewModel.updateHabit(habit)
-                    Log.d("MYAPP", "HABIT ${habit.toString()}")
                 }
             }
         }

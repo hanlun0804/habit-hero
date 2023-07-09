@@ -1,30 +1,34 @@
 [
     {
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/activity_see_tasks.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/activity_see_tasks.xml"
+    },
+    {
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/custom_spinner_item.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/custom_spinner_item.xml"
+    },
+    {
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/activity_manage_habits.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/activity_manage_habits.xml"
+    },
+    {
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/habit_item.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/habit_item.xml"
+    },
+    {
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/manage_item.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/manage_item.xml"
+    },
+    {
         "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_add_habit.xml",
         "source": "habit.habithero.app-main-37:/layout/activity_add_habit.xml"
     },
     {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/habit_item.xml",
-        "source": "habit.habithero.app-main-37:/layout/habit_item.xml"
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/activity_add_habit.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/activity_add_habit.xml"
     },
     {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_manage_habits.xml",
-        "source": "habit.habithero.app-main-37:/layout/activity_manage_habits.xml"
-    },
-    {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_see_tasks.xml",
-        "source": "habit.habithero.app-main-37:/layout/activity_see_tasks.xml"
-    },
-    {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/custom_spinner_item.xml",
-        "source": "habit.habithero.app-main-37:/layout/custom_spinner_item.xml"
-    },
-    {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/manage_item.xml",
-        "source": "habit.habithero.app-main-37:/layout/manage_item.xml"
-    },
-    {
-        "merged": "habit.habithero.app-mergeDebugResources-34:/layout/activity_main.xml",
-        "source": "habit.habithero.app-main-37:/layout/activity_main.xml"
+        "merged": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "/home/hannalunne/.gradle/daemon/8.0/habit.habithero.app-main-37:/layout/activity_main.xml"
     }
 ]

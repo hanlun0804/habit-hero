@@ -17,7 +17,8 @@
         android:fontFamily="@font/bebas_neue_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="HABIT HERO"/>
 
 
     <TextView
@@ -28,7 +29,8 @@
         android:textSize="16sp"
         android:textColor="@color/primaryColor"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHabitTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvHabitTitle"
+        android:contentDescription="Press the checkboxes to check and uncheck tasks"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabBack"
@@ -43,7 +45,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24"
-        app:elevation="0dp" />
+        app:elevation="0dp"
+        android:contentDescription="Back to homepage button"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHabitItems"
@@ -55,6 +58,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/todaysTasksExpl"
         android:layout_marginTop="10dp"
-        tools:listitem="@layout/habit_item" />
+        tools:listitem="@layout/habit_item"
+        android:contentDescription="Container for today's tasks"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

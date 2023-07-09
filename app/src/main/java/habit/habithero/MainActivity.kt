@@ -15,6 +15,7 @@ import androidx.core.app.NotificationManagerCompat
 import habit.habithero.Database.HabitDatabase
 import habit.habithero.Models.Habit
 import habit.habithero.Utilities.NotificationReceiver
+import habit.habithero.Utilities.ResetCheckedStatusReceiver
 import habit.habithero.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -43,6 +44,9 @@ class MainActivity : AppCompatActivity() {
 
         // Schedules daily notifications, will only show notifications if permission is granted
         setDailyNotifications()
+
+        // Resets the checkboxes at midnight
+        resetCheckboxes()
 
         // Initializes UI
         initUI()
@@ -108,6 +112,40 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun resetCheckboxes() {
+        // Creates an Intent for the "NotificationReceiver" in Utilities
+        val intent = Intent(this, ResetCheckedStatusReceiver::class.java)
+        // PendingIntent allows the app to send notifications, even if the app isn't running
+        /*
+        - PendingIntent.FLAG_UPDATE_CURRENT: keeps PendingIntent if it exists, replace data with new data
+        - PendingIntent.FLAG_MUTABLE: makes intent mutable
+        - PendingIntent.FLAG_IMMUTABLE: makes intent immutable
+         */
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) PendingIntent.FLAG_MUTABLE else PendingIntent.FLAG_IMMUTABLE
+        )
+
+        // Sets 18:00 as fire time for notification
+        val calendar = Calendar.getInstance()
+        calendar.apply {
+            timeInMillis = System.currentTimeMillis()
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+        }
+
+        // Declares and initializes an AlarmManager
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+
+        // Sets the alarm to repeat daily
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent
+        )
+    }
+
     private fun setDailyNotifications() {
         // Creates an Intent for the "NotificationReceiver" in Utilities
         val intent = Intent(this, NotificationReceiver::class.java)
@@ -129,7 +167,7 @@ class MainActivity : AppCompatActivity() {
         calendar.apply {
             timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 18)
-            set(Calendar.MINUTE, 6)
+            set(Calendar.MINUTE, 0)
             set(Calendar.SECOND, 0)
         }
 
@@ -146,7 +184,7 @@ class MainActivity : AppCompatActivity() {
     private fun showPermissionWindow() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Notification Permission")
-            .setMessage("Habit Hero wants to remind you of your daily reminders. Do you want notifications?")
+            .setMessage("Habit Hero wants to remind you of your daily tasks. Do you want notifications?")
             .setPositiveButton("Grant") { dialog, _ ->
                 dialog.dismiss()
                 changeNotificationSettings()

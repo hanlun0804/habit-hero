@@ -56,7 +56,6 @@ class NotificationReceiver : BroadcastReceiver() {
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                    Log.d("MYAPP", notificationBuilder.toString())
 
                     notificationManager.notify(1, notificationBuilder.build())
                 }

@@ -1,5 +1,8 @@
 package habit.habithero
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import habit.habithero.Database.HabitDatabase
 import habit.habithero.Models.Habit
 import habit.habithero.Models.HabitViewModel
+import habit.habithero.Utilities.ResetCheckedStatusReceiver
 import habit.habithero.databinding.ActivityAddHabitBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -52,6 +56,8 @@ class AddHabitActivity : AppCompatActivity() {
 
         // Initiates UI
         initUI(checkboxes)
+
+
     }
 
     private fun initUI(checkboxes: Array<CheckBox>) {
@@ -84,7 +90,7 @@ class AddHabitActivity : AppCompatActivity() {
                 var repeatOnDate: Int = 0
                 var etnsTimesDay: Int = 1
 
-                if (selectedFrequencyItem.equals("Several days a week")) {
+                if (selectedFrequencyItem.equals("Day(s) in a week")) {
                     for (checkbox in checkboxes) {
                         if (checkbox.isChecked) {
                             val lowercaseDay = checkbox.text.toString().lowercase()
@@ -163,7 +169,7 @@ class AddHabitActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             // Notifies user the data is added
-            Toast.makeText(this@AddHabitActivity, "Data was entered to database", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@AddHabitActivity, "Habit added", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -180,7 +186,7 @@ class AddHabitActivity : AppCompatActivity() {
 
         val sFrequency = binding.sFrequency
         val frequencyItems = arrayOf(
-            "Select option", "Several times a day", "Once per day", "Several days a week", "Once per month"
+            "Select option", "Several times a day", "Once per day", "Day(s) in a week", "Once per month"
         )
         val frequencyAdapter = ArrayAdapter(this, R.layout.custom_spinner_item, frequencyItems)
         frequencyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -205,7 +211,7 @@ class AddHabitActivity : AppCompatActivity() {
                 llDate.visibility = View.GONE
                 when (selectedFrequencyItem) {
                     "Several times a day" -> llTimesDay.visibility = View.VISIBLE
-                    "Several days a week" -> llDays.visibility = View.VISIBLE
+                    "Day(s) in a week" -> llDays.visibility = View.VISIBLE
                     "Once per month" -> llDate.visibility = View.VISIBLE
                 }
             }
@@ -228,6 +234,43 @@ class AddHabitActivity : AppCompatActivity() {
 
         // Updates database
         updateTodayStatus()
+
+        // Get the current time
+        val currentTime = Calendar.getInstance()
+        currentTime.timeInMillis = System.currentTimeMillis()
+
+        // Set the alarm time to midnight
+        val alarmTime = Calendar.getInstance()
+        alarmTime.set(Calendar.HOUR_OF_DAY, 0)
+        alarmTime.set(Calendar.MINUTE, 0)
+        alarmTime.set(Calendar.SECOND, 0)
+
+        // If the current time is already past midnight, schedule the alarm for the next day
+        if (currentTime.after(alarmTime)) {
+            alarmTime.add(Calendar.DAY_OF_MONTH, 1)
+        }
+
+        // Schedule the recurring alarm at midnight
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, ResetCheckedStatusReceiver::class.java)
+        intent.putExtra("id", id)
+        intent.putExtra("habitTitle", habitTitle)
+        intent.putExtra("selectedCategoryItem", selectedCategoryItem)
+        intent.putExtra("repeatOnDate", repeatOnDate)
+        intent.putExtra("repeatOnDay", arrayListOf(repeatOnDay))
+        intent.putExtra("etnsTimesDay", etnsTimesDay)
+        val pendingIntent = PendingIntent.getBroadcast(
+            this,
+            0,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+        )
+        alarmManager.setRepeating(
+            AlarmManager.RTC_WAKEUP,
+            alarmTime.timeInMillis,
+            AlarmManager.INTERVAL_DAY,
+            pendingIntent
+        )
     }
 
     // Updates which habits should be added on the current date

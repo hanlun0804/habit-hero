@@ -28,4 +28,15 @@ class HabitViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    // Reset isChecked property to 0 for all habits in database
+    fun resetHabitCheckedStatus() {
+        viewModelScope.launch {
+            val habits: List<Habit>? = allHabits.value
+            habits?.forEach { habit ->
+                habit.isChecked = false
+                updateHabit(habit)
+            }
+        }
+    }
 }

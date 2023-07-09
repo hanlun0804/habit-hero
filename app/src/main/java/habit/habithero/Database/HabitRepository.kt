@@ -14,6 +14,9 @@ class HabitRepository(private val habitDao: HabitDao) : HabitDao {
         return habitDao.getToday()
     }
 
+    override fun getChecked(): List<Habit> {
+        return habitDao.getChecked()
+    }
     override fun insert(habit : Habit) {
         habitDao.insert(habit)
     }
