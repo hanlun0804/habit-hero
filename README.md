@@ -1,7 +1,7 @@
 # Habit Hero app
 
 ## Introduction
-An android app where you set habits you want to perform regularly. You will be notified if you haven't done the tasks you're supposed to do on a certain day. The app does not track or retrieve any information about the user.
+An android app where you set habits you want to perform regularly. You will be notified if you haven't done the tasks you're supposed to do on a certain day. The app does not track or retrieve any information about the user. Feel free to contact the developer regarding any feedback at hanlun0804@outlook.com.
 
 ## Guidence
 You create a habit by pressing the "Add habit" button on the main screen. Here you fill out the necessary information. The data is stored locally, in a database. Every day, the app checks the habits that should be performed that day. This is shown by pressing the "See today's tasks button". To delete a habit, press "Manage habits", and then press x on the habits you want to delete.
