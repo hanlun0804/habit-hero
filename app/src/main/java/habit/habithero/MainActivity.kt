@@ -2,6 +2,7 @@ package habit.habithero
 
 import android.app.AlarmManager
 import android.app.AlertDialog
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
@@ -27,9 +28,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var database: HabitDatabase
     private val mainScope = CoroutineScope(Dispatchers.Main)
+    /*
     private lateinit var notificationManager: NotificationManager
-    private val NOTIFICATION_PERMISSION_REQUEST_CODE = 1001
     private var requestedNotificationPermission = false
+     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +41,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initializes notification manager and sets up notification permission
-        notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        notificationPermissionSetup()
+        // notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+        // Creates the notification channel
+        /*
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel("channelID", "Habit Hero Channel", NotificationManager.IMPORTANCE_DEFAULT)
+            // Customize the channel settings if needed
+            notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+         */
+
+        /* notificationPermissionSetup() */
 
         // Schedules daily notifications, will only show notifications if permission is granted
-        setDailyNotifications()
+        /* setDailyNotifications() */
 
         // Resets the checkboxes at midnight
         resetCheckboxes()
@@ -83,6 +96,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*
     private fun notificationPermissionSetup() {
         // Checks if notifications are previously requested
         /*
@@ -112,25 +126,29 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+     */
+
     private fun resetCheckboxes() {
-        // Creates an Intent for the "NotificationReceiver" in Utilities
+        // Creates an Intent for the "ResetCheckedStatusReceiver" in Utilities
         val intent = Intent(this, ResetCheckedStatusReceiver::class.java)
-        // PendingIntent allows the app to send notifications, even if the app isn't running
+        // PendingIntent allows the app to send reset checkboxes, even if the app isn't running
         /*
         - PendingIntent.FLAG_UPDATE_CURRENT: keeps PendingIntent if it exists, replace data with new data
         - PendingIntent.FLAG_MUTABLE: makes intent mutable
         - PendingIntent.FLAG_IMMUTABLE: makes intent immutable
          */
+        val requestCode = System.currentTimeMillis().toInt() // Unique identifier for the PendingIntent
+
         val pendingIntent = PendingIntent.getBroadcast(
             this,
-            0,
+            requestCode,
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) PendingIntent.FLAG_MUTABLE else PendingIntent.FLAG_IMMUTABLE
         )
 
-        // Sets 18:00 as fire time for notification
-        val calendar = Calendar.getInstance()
-        calendar.apply {
+        // Sets 00:00 as fire time for resetting checkboxes
+        val calendarCheckboxes = Calendar.getInstance()
+        calendarCheckboxes.apply {
             timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 0)
             set(Calendar.MINUTE, 0)
@@ -142,10 +160,11 @@ class MainActivity : AppCompatActivity() {
 
         // Sets the alarm to repeat daily
         alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent
+            AlarmManager.RTC_WAKEUP, calendarCheckboxes.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent
         )
     }
 
+    /*
     private fun setDailyNotifications() {
         // Creates an Intent for the "NotificationReceiver" in Utilities
         val intent = Intent(this, NotificationReceiver::class.java)
@@ -155,19 +174,21 @@ class MainActivity : AppCompatActivity() {
         - PendingIntent.FLAG_MUTABLE: makes intent mutable
         - PendingIntent.FLAG_IMMUTABLE: makes intent immutable
          */
+        val requestCode = System.currentTimeMillis().toInt() + 1
+
         val pendingIntent = PendingIntent.getBroadcast(
             this,
-            0,
+            requestCode,
             intent,
             PendingIntent.FLAG_UPDATE_CURRENT or if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) PendingIntent.FLAG_MUTABLE else PendingIntent.FLAG_IMMUTABLE
         )
 
         // Sets 18:00 as fire time for notification
-        val calendar = Calendar.getInstance()
-        calendar.apply {
+        val calendarNotification = Calendar.getInstance()
+        calendarNotification.apply {
             timeInMillis = System.currentTimeMillis()
             set(Calendar.HOUR_OF_DAY, 18)
-            set(Calendar.MINUTE, 0)
+            set(Calendar.MINUTE, 34)
             set(Calendar.SECOND, 0)
         }
 
@@ -176,34 +197,41 @@ class MainActivity : AppCompatActivity() {
 
         // Sets the alarm to repeat daily
         alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP, calendar.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent
+            AlarmManager.RTC_WAKEUP, calendarNotification.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent
         )
     }
 
+     */
+
+    /*
     // Asks the user for permission, and guides them to their notification settings if they accept
     private fun showPermissionWindow() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Notification Permission")
             .setMessage("Habit Hero wants to remind you of your daily tasks. Do you want notifications?")
-            .setPositiveButton("Grant") { dialog, _ ->
+            .setPositiveButton("Yes") { dialog, _ ->
                 dialog.dismiss()
                 changeNotificationSettings()
             }
-            .setNegativeButton("Deny") { dialog, _ ->
+            .setNegativeButton("No") { dialog, _ ->
                 dialog.dismiss()
             }
             .setCancelable(false)
             .show()
     }
 
+     */
+
+    /*
     private fun changeNotificationSettings() {
         val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
         intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
-        startActivityForResult(intent, NOTIFICATION_PERMISSION_REQUEST_CODE)
+        startActivityForResult(intent, 1001)
     }
+     */
 
-    // Returns a list of today's tasks. Is "suspend", so needs to be called from corountine.
-    suspend fun readData(): List<Habit> {
+    // Returns a list of today's tasks. Is "suspend", so needs to be called from coroutine.
+    private suspend fun readData(): List<Habit> {
         lateinit var habits: List<Habit>
         // withContext ensures the database is retrieved on a background thread
         withContext(Dispatchers.IO) {
@@ -213,11 +241,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Returns the amount of checked items
-    suspend fun getCheckedAmount(): Int {
+    private suspend fun getCheckedAmount(): Int {
         var checkedAmount: Int = 0
         val data: List<Habit> = readData()
-        for (i in 0 until data.size) {
-            if (data[i].isChecked) {
+        for (element in data) {
+            if (element.isChecked) {
                 checkedAmount++
             }
         }
@@ -225,10 +253,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Changes image of character
-    suspend fun changeCharacter() {
+    private suspend fun changeCharacter() {
         val data: List<Habit> = readData()
-        val notCheckedAmount: Int = data.size - getCheckedAmount()
-        when (notCheckedAmount) {
+        when (data.size - getCheckedAmount()) {
             1 -> { binding.imgView.setImageResource(R.drawable.character) }
             0 -> { binding.imgView.setImageResource(R.drawable.smiling_character) }
             else -> { binding.imgView.setImageResource(R.drawable.sad_character) }

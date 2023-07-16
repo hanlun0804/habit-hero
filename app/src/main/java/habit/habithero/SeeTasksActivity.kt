@@ -16,8 +16,6 @@ import habit.habithero.Adapter.TaskAdapter
 import habit.habithero.Database.HabitDatabase
 import habit.habithero.Models.Habit
 import habit.habithero.Models.HabitViewModel
-import habit.habithero.Utilities.NotificationReceiver
-import habit.habithero.Utilities.ResetCheckedStatusReceiver
 import habit.habithero.databinding.ActivitySeeTasksBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -64,12 +62,15 @@ class SeeTasksActivity : AppCompatActivity() {
 
     }
 
+   /*
     override fun onResume() {
         super.onResume()
 
         // Updates isChecked
         resetIsChecked()
     }
+
+    */
 
     private fun initUI() {
         // Adds button that takes user to main screen
@@ -98,6 +99,7 @@ class SeeTasksActivity : AppCompatActivity() {
         return habits
     }
 
+    /*
     private fun resetIsChecked() {
         // Reset isChecked to 0 at midnight
         if (6 != tmpDate) {
@@ -109,6 +111,8 @@ class SeeTasksActivity : AppCompatActivity() {
             database
         }
     }
+
+     */
 
 
 

@@ -1,8 +1,5 @@
 package habit.habithero
 
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -15,7 +12,6 @@ import androidx.lifecycle.lifecycleScope
 import habit.habithero.Database.HabitDatabase
 import habit.habithero.Models.Habit
 import habit.habithero.Models.HabitViewModel
-import habit.habithero.Utilities.ResetCheckedStatusReceiver
 import habit.habithero.databinding.ActivityAddHabitBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -45,7 +41,7 @@ class AddHabitActivity : AppCompatActivity() {
         binding = ActivityAddHabitBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initiates viewmodel
+        // Initiates view model
         viewModel = HabitViewModel(application)
 
         // Declares and initiates an array of checkboxes
@@ -56,8 +52,6 @@ class AddHabitActivity : AppCompatActivity() {
 
         // Initiates UI
         initUI(checkboxes)
-
-
     }
 
     private fun initUI(checkboxes: Array<CheckBox>) {
@@ -156,7 +150,7 @@ class AddHabitActivity : AppCompatActivity() {
                     return@setOnClickListener
                 }
 
-                // Adds an instance of the habit per time a day it should be done (1 by default), so they can be handled seperatly
+                // Adds an instance of the habit per time a day it should be done (1 by default), so they can be handled separately
                 for (i in 1..etnsTimesDay) {
                     writeData(null, habitTitle, selectedCategoryItem, repeatOnDate, repeatOnDay, etnsTimesDay)
                 }
@@ -198,11 +192,11 @@ class AddHabitActivity : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 selectedCategoryItem = parent.getItemAtPosition(position).toString()
             }
-            // Added because it is required, but "Select option" is selected by default, which is handeled seperatly
+            // Added because it is required, but "Select option" is selected by default, which is handled separately
             override fun onNothingSelected(p0: AdapterView<*>?) { }
         }
 
-        // Handle the visibility of views when items in sFrequency is chosen and sets the selectedFrequncyItem
+        // Handle the visibility of views when items in sFrequency is chosen and sets the selectedFrequencyItem
         sFrequency.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 selectedFrequencyItem = parent.getItemAtPosition(position).toString()
@@ -215,7 +209,7 @@ class AddHabitActivity : AppCompatActivity() {
                     "Once per month" -> llDate.visibility = View.VISIBLE
                 }
             }
-            // Added because it is required, but "Select option" is selected by default, which is handeled seperatly
+            // Added because it is required, but "Select option" is selected by default, which is handled separately
             override fun onNothingSelected(p0: AdapterView<*>?) { }
         }
     }
@@ -226,7 +220,7 @@ class AddHabitActivity : AppCompatActivity() {
         // Creates habit with input parameters
         habit = Habit(id, habitTitle, selectedCategoryItem, repeatOnDate, repeatOnDay, etnsTimesDay)
 
-        // Starts a corountine so database can be gotten on a background IO thread
+        // Starts a coroutine so database can be gotten on a background IO thread
         GlobalScope.launch(Dispatchers.IO) {
             // Inserts habit to database using function defined in HabitDao
             database.getHabitDao().insert(habit)
@@ -234,43 +228,6 @@ class AddHabitActivity : AppCompatActivity() {
 
         // Updates database
         updateTodayStatus()
-
-        // Get the current time
-        val currentTime = Calendar.getInstance()
-        currentTime.timeInMillis = System.currentTimeMillis()
-
-        // Set the alarm time to midnight
-        val alarmTime = Calendar.getInstance()
-        alarmTime.set(Calendar.HOUR_OF_DAY, 0)
-        alarmTime.set(Calendar.MINUTE, 0)
-        alarmTime.set(Calendar.SECOND, 0)
-
-        // If the current time is already past midnight, schedule the alarm for the next day
-        if (currentTime.after(alarmTime)) {
-            alarmTime.add(Calendar.DAY_OF_MONTH, 1)
-        }
-
-        // Schedule the recurring alarm at midnight
-        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val intent = Intent(this, ResetCheckedStatusReceiver::class.java)
-        intent.putExtra("id", id)
-        intent.putExtra("habitTitle", habitTitle)
-        intent.putExtra("selectedCategoryItem", selectedCategoryItem)
-        intent.putExtra("repeatOnDate", repeatOnDate)
-        intent.putExtra("repeatOnDay", arrayListOf(repeatOnDay))
-        intent.putExtra("etnsTimesDay", etnsTimesDay)
-        val pendingIntent = PendingIntent.getBroadcast(
-            this,
-            0,
-            intent,
-            PendingIntent.FLAG_IMMUTABLE
-        )
-        alarmManager.setRepeating(
-            AlarmManager.RTC_WAKEUP,
-            alarmTime.timeInMillis,
-            AlarmManager.INTERVAL_DAY,
-            pendingIntent
-        )
     }
 
     // Updates which habits should be added on the current date
@@ -286,7 +243,7 @@ class AddHabitActivity : AppCompatActivity() {
         val date = calendar.get(Calendar.DAY_OF_MONTH)
         val day = calendar.get(Calendar.DAY_OF_WEEK)
 
-        // Starts a corountine
+        // Starts a coroutine
         lifecycleScope.launch {
             lateinit var habits: List<Habit>
             // Data from database is retrieved on background thread
@@ -296,7 +253,7 @@ class AddHabitActivity : AppCompatActivity() {
             if (!habits.isNullOrEmpty()) {
                 for (habit in habits) {
                     var tempDate: Int = date
-                    // Checks if it should be repeated on a spesific date (0 by default)
+                    // Checks if it should be repeated on a specific date (0 by default)
                     if (habit.repeatOnDate == 0) {
                         habit.isToday = habit.repeatOnDay.contains(day)
                     } else {

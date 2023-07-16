@@ -1,7 +1,7 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="habit.habithero"
-4    android:versionCode="4"
+4    android:versionCode="7"
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
@@ -32,7 +32,7 @@
 19-->[androidx.core:core:1.9.0] /home/hannalunne/.gradle/caches/transforms-3/256c6597bc3e6f8192abd6f9b27a26ab/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:7:5-46:19
+21-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:7:5-47:19
 22        android:allowBackup="true"
 22-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:8:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -80,29 +80,29 @@
 46            android:screenOrientation="portrait" />
 46-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:31:13-49
 47        <receiver
-47-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:9-34:52
+47-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:9-35:52
 48            android:name="habit.habithero.Utilities.ResetCheckedStatusReceiver"
-48-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:19-86
+48-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:34:13-80
 49            android:screenOrientation="portrait" />
-49-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:34:13-49
+49-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:35:13-49
 50
 51        <activity
-51-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:36:9-45:20
+51-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:37:9-46:20
 52            android:name="habit.habithero.MainActivity"
-52-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:37:13-41
+52-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:38:13-41
 53            android:exported="true"
-53-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:38:13-36
+53-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:39:13-36
 54            android:screenOrientation="portrait" >
-54-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:39:13-49
+54-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:40:13-49
 55            <intent-filter>
-55-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:40:13-44:29
+55-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:41:13-45:29
 56                <action android:name="android.intent.action.MAIN" />
-56-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:41:17-69
-56-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:41:25-66
+56-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:42:17-69
+56-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:42:25-66
 57
 58                <category android:name="android.intent.category.LAUNCHER" />
-58-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:43:17-77
-58-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:43:27-74
+58-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:44:17-77
+58-->/home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:44:27-74
 59            </intent-filter>
 60        </activity>
 61

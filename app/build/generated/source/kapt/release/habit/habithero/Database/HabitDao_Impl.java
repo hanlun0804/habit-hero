@@ -350,6 +350,76 @@ public final class HabitDao_Impl implements HabitDao {
     }
   }
 
+  @Override
+  public List<Habit> getChecked() {
+    final String _sql = "SELECT * FROM habits_table WHERE isChecked = 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+      final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+      final int _cursorIndexOfRepeatOnDate = CursorUtil.getColumnIndexOrThrow(_cursor, "repeatOnDate");
+      final int _cursorIndexOfRepeatOnDay = CursorUtil.getColumnIndexOrThrow(_cursor, "repeatOnDay");
+      final int _cursorIndexOfTimesADay = CursorUtil.getColumnIndexOrThrow(_cursor, "timesADay");
+      final int _cursorIndexOfIsChecked = CursorUtil.getColumnIndexOrThrow(_cursor, "isChecked");
+      final int _cursorIndexOfIsToday = CursorUtil.getColumnIndexOrThrow(_cursor, "isToday");
+      final List<Habit> _result = new ArrayList<Habit>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final Habit _item;
+        final Integer _tmpId;
+        if (_cursor.isNull(_cursorIndexOfId)) {
+          _tmpId = null;
+        } else {
+          _tmpId = _cursor.getInt(_cursorIndexOfId);
+        }
+        final String _tmpTitle;
+        if (_cursor.isNull(_cursorIndexOfTitle)) {
+          _tmpTitle = null;
+        } else {
+          _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+        }
+        final String _tmpCategory;
+        if (_cursor.isNull(_cursorIndexOfCategory)) {
+          _tmpCategory = null;
+        } else {
+          _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
+        }
+        final int _tmpRepeatOnDate;
+        _tmpRepeatOnDate = _cursor.getInt(_cursorIndexOfRepeatOnDate);
+        final List<Integer> _tmpRepeatOnDay;
+        final String _tmp;
+        if (_cursor.isNull(_cursorIndexOfRepeatOnDay)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getString(_cursorIndexOfRepeatOnDay);
+        }
+        _tmpRepeatOnDay = __converters().toIntList(_tmp);
+        final Integer _tmpTimesADay;
+        if (_cursor.isNull(_cursorIndexOfTimesADay)) {
+          _tmpTimesADay = null;
+        } else {
+          _tmpTimesADay = _cursor.getInt(_cursorIndexOfTimesADay);
+        }
+        final boolean _tmpIsChecked;
+        final int _tmp_1;
+        _tmp_1 = _cursor.getInt(_cursorIndexOfIsChecked);
+        _tmpIsChecked = _tmp_1 != 0;
+        final boolean _tmpIsToday;
+        final int _tmp_2;
+        _tmp_2 = _cursor.getInt(_cursorIndexOfIsToday);
+        _tmpIsToday = _tmp_2 != 0;
+        _item = new Habit(_tmpId,_tmpTitle,_tmpCategory,_tmpRepeatOnDate,_tmpRepeatOnDay,_tmpTimesADay,_tmpIsChecked,_tmpIsToday);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   public static List<Class<?>> getRequiredConverters() {
     return Arrays.asList(Converters.class);
   }

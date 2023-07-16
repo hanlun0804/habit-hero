@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
 MERGED from [androidx.databinding:viewbinding:8.0.2] /home/hannalunne/.gradle/caches/transforms-3/3d4b740dab056db995d284883c54aafa/transformed/viewbinding-8.0.2/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.room:room-ktx:2.4.2] /home/hannalunne/.gradle/caches/transforms-3/78062576ae780b167b9ea0f40105ee3c/transformed/room-ktx-2.4.2/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1] /home/hannalunne/.gradle/caches/transforms-3/4baba5bdb676d92ed94a62a0455b0d6a/transformed/lifecycle-viewmodel-ktx-2.4.1/AndroidManifest.xml:17:1-24:12
@@ -56,22 +56,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] /home/hannalunne/.gradle/
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/hannalunne/.gradle/caches/transforms-3/330486b78dc7c88a659f932492389125/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /home/hannalunne/.gradle/caches/transforms-3/4b74cb5652a2f2ead9a792f2de7644b6/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /home/hannalunne/.gradle/caches/transforms-3/c5ec658faf2b98f812e539eacbdac157/transformed/annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
+INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
 	package
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:1-48:12
 		INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:2:11-69
@@ -83,8 +83,12 @@ uses-permission#android.permission.RECEIVE_NOTIFICATIONS
 ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:5:5-80
 	android:name
 		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:5:22-77
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:6:5-81
+	android:name
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:6:22-78
 application
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:6:5-42:19
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:7:5-46:19
 MERGED from [com.google.android.material:material:1.6.0] /home/hannalunne/.gradle/caches/transforms-3/ca996a63798990e4faf0bb55328e1c4d/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] /home/hannalunne/.gradle/caches/transforms-3/ca996a63798990e4faf0bb55328e1c4d/transformed/material-1.6.0/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/hannalunne/.gradle/caches/transforms-3/1f670a95ccfade1cba086a4de2f389cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -104,65 +108,71 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/hannalunne/.gradle/ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /home/hannalunne/.gradle/caches/transforms-3/256c6597bc3e6f8192abd6f9b27a26ab/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:11:9-41
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:12:9-41
 	android:fullBackupContent
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:10:9-54
 	android:roundIcon
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:12:9-49
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:13:9-49
 	tools:targetApi
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:15:9-29
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:16:9-29
 	android:icon
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:10:9-44
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:11:9-44
 	android:allowBackup
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:7:9-35
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:14:9-47
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:15:9-47
 	android:dataExtractionRules
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:8:9-65
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:9:9-65
 activity#habit.habithero.AddHabitActivity
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:16:9-18:52
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:17:9-19:52
 	android:screenOrientation
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:18:13-49
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:19:13-49
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:18:13-45
 activity#habit.habithero.SeeTasksActivity
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:20:9-22:52
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:21:9-23:52
 	android:screenOrientation
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:22:13-49
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:23:13-49
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:21:13-45
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:22:13-45
 activity#habit.habithero.ManageHabitsActivity
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:24:9-26:52
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:25:9-27:52
 	android:screenOrientation
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:27:13-49
+	android:name
 		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:26:13-49
-	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:25:13-49
 receiver#habit.habithero.Utilities.NotificationReceiver
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:28:9-30:52
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:29:9-31:52
 	android:screenOrientation
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:30:13-49
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:31:13-49
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:29:13-74
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:30:13-74
+receiver#habit.habithero.Utilities.ResetCheckedStatusReceiver
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:9-34:52
+	android:screenOrientation
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:34:13-49
+	android:name
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:19-86
 activity#habit.habithero.MainActivity
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:32:9-41:20
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:36:9-45:20
 	android:screenOrientation
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:35:13-49
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:39:13-49
 	android:exported
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:34:13-36
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:38:13-36
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:33:13-41
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:37:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:36:13-40:29
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:40:13-44:29
 action#android.intent.action.MAIN
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:37:17-69
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:41:17-69
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:37:25-66
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:41:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:39:17-77
+ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:43:17-77
 	android:name
-		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:39:27-74
+		ADDED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml:43:27-74
 uses-sdk
 INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/hannalunne/AndroidStudioProjects/HabitHero/app/src/main/AndroidManifest.xml

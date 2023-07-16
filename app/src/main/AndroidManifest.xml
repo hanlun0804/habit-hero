@@ -30,7 +30,8 @@
             android:name="habit.habithero.Utilities.NotificationReceiver"
             android:screenOrientation="portrait" />
 
-        <receiver android:name="habit.habithero.Utilities.ResetCheckedStatusReceiver"
+        <receiver
+            android:name="habit.habithero.Utilities.ResetCheckedStatusReceiver"
             android:screenOrientation="portrait" />
 
         <activity

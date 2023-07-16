@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="habit.habithero"
-    android:versionCode="4"
+    android:versionCode="5"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -10,6 +10,7 @@
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <permission
         android:name="habit.habithero.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -40,6 +41,9 @@
 
         <receiver
             android:name="habit.habithero.Utilities.NotificationReceiver"
+            android:screenOrientation="portrait" />
+        <receiver
+            android:name="habit.habithero.Utilities.ResetCheckedStatusReceiver"
             android:screenOrientation="portrait" />
 
         <activity

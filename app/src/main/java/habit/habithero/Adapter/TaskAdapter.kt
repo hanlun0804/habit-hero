@@ -15,10 +15,6 @@ import habit.habithero.R
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.Calendar
-import java.util.Date
-import java.util.Locale
 
 class TaskAdapter(private val context: Context, private val layoutResourceId: Int) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
     private val HabitsList = ArrayList<Habit>()
